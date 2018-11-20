@@ -39,6 +39,17 @@ public class planner extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        connect = new javax.swing.JButton();
+        degreeCont = new javax.swing.JButton();
+        courseCont = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,9 +103,44 @@ public class planner extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("View prerequisite courses for a course");
+        jButton8.setText("View prerequisite courses for a required course");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
-        jButton9.setText("jButton9");
+        jButton9.setText("View number of credits to add to POS for completion");
+
+        jButton10.setText("List of prerequisite courses for courses in my POS");
+
+        jButton11.setText("View number of credits you completed in your program");
+
+        jButton12.setText("View numbers of credits you have left to complete");
+
+        jButton13.setText("Determine if completion requirements have been met");
+
+        jButton14.setText("View course plan by semester");
+
+        jButton15.setText("View overall GPA");
+
+        jButton16.setText("View my GPA for CIS courses");
+
+        jButton17.setText("View GPA for most recent 10 credits");
+
+        connect.setText("Connect to database");
+        connect.setEnabled(false);
+        connect.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                connectActionPerformed(evt);
+            }
+        });
+
+        degreeCont.setText("Mantain degrees");
+        degreeCont.setEnabled(false);
+
+        courseCont.setText("Mantain courses");
+        courseCont.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,29 +149,35 @@ public class planner extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(adminToggle)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
-                        .addGap(21, 21, 21))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton9)
-                            .addComponent(jButton8)
-                            .addComponent(jButton7)
-                            .addComponent(jButton6)
-                            .addComponent(jButton4)
-                            .addComponent(jButton3)
-                            .addComponent(jButton2))
-                        .addGap(0, 34, Short.MAX_VALUE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel2)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(31, 31, 31)
+                            .addComponent(jButton5)))
+                    .addComponent(jButton1)
+                    .addComponent(jButton17)
+                    .addComponent(jButton16)
+                    .addComponent(jButton15)
+                    .addComponent(jButton14)
+                    .addComponent(jButton13)
+                    .addComponent(jButton12)
+                    .addComponent(jButton11)
+                    .addComponent(jButton10)
+                    .addComponent(jButton8)
+                    .addComponent(jButton9)
+                    .addComponent(jButton7)
+                    .addComponent(jButton6)
+                    .addComponent(jButton4)
+                    .addComponent(jButton3)
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(adminToggle)
+                    .addComponent(connect)
+                    .addComponent(degreeCont)
+                    .addComponent(courseCont))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,35 +185,62 @@ public class planner extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adminToggle)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jLabel1)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton17))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(connect)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(degreeCont)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(courseCont)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+       
     private void adminToggleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminToggleActionPerformed
         // TODO add your handling code here:
+            connect.setEnabled(true);
+            courseCont.setEnabled(true);
+            degreeCont.setEnabled(true);
     }//GEN-LAST:event_adminToggleActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -183,6 +262,14 @@ public class planner extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_connectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,7 +308,18 @@ public class planner extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminToggle;
+    private javax.swing.JButton connect;
+    private javax.swing.JButton courseCont;
+    private javax.swing.JButton degreeCont;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
